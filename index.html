@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Boho Cake Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🍰 Boho Cake Shop</h1>
+        <p>Handcrafted cakes, made with love</p>
+    </header>
+
+    <section class="cakes-gallery">
+        <div class="cake-item">
+            <img src="rainbow cake.jpg" alt="Rainbow Cake">
+            <h3>Rainbow Cake</h3>
+            <p class="price">₹300</p>
+        </div>
+        <div class="cake-item">
+            <img src="choco cake.webp" alt="Chocolate Cake">
+            <h3>Chocolate Cake</h3>
+            <p class="price">₹200</p>
+        </div>
+        <div class="cake-item">
+            <img src="redvelvet.jpg" alt="Red Velvet Cake">
+            <h3>Red Velvet Cake</h3>
+            <p class="price">₹250</p>
+        </div>
+        <div class="cake-item">
+            <img src="blackforest.jpg" alt="Black Forest Cake">
+            <h3>Black Forest Cake</h3>
+            <p class="price">₹350</p>
+        </div>
+    </section>
+
+    <section class="order-form">
+        <h2>Order Your Cake</h2>
+        <label>Rainbow Cake (Qty)</label>
+        <input type="number" id="rainbow" placeholder="0" min="0">
+
+        <label>Chocolate Cake (Qty)</label>
+        <input type="number" id="chocolate" placeholder="0" min="0">
+
+        <label>Red Velvet Cake (Qty)</label>
+        <input type="number" id="redvelvet" placeholder="0" min="0">
+
+        <label>Black Forest Cake (Qty)</label>
+        <input type="number" id="blackforest" placeholder="0" min="0">
+
+        <button onclick="calculateBill()">Place Order</button>
+
+        <div id="bill-box">Total Price: ₹0</div>
+    </section>
+
+    <footer>
+        <p>© 2025 Boho Cake Shop | Sweetness in Every Slice 🍰</p>
+    </footer>
+
+    <script>
+        function calculateBill() {
+            let rainbow = parseInt(document.getElementById("rainbow").value) || 0;
+            let chocolate = parseInt(document.getElementById("chocolate").value) || 0;
+            let redvelvet = parseInt(document.getElementById("redvelvet").value) || 0;
+            let blackforest = parseInt(document.getElementById("blackforest").value) || 0;
+
+            let total = (rainbow * 300) + (chocolate * 200) + (redvelvet * 250) + (blackforest * 350);
+
+            document.getElementById("bill-box").innerHTML = `Total Price: ₹${total}`;
+        }
+    </script>
+</body>
+</html>
