@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Boho Cake Shop</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
     <header>
@@ -48,7 +49,7 @@
         <label>Black Forest Cake (Qty)</label>
         <input type="number" id="blackforest" placeholder="0" min="0">
 
-        <button onclick="calculateBill()">Place Order</button>
+        <button id="order-btn">Place Order</button>
 
         <div id="bill-box">Total Price: ₹0</div>
     </section>
@@ -57,17 +58,6 @@
         <p>© 2025 Boho Cake Shop | Sweetness in Every Slice 🍰</p>
     </footer>
 
-    <script>
-        function calculateBill() {
-            let rainbow = parseInt(document.getElementById("rainbow").value) || 0;
-            let chocolate = parseInt(document.getElementById("chocolate").value) || 0;
-            let redvelvet = parseInt(document.getElementById("redvelvet").value) || 0;
-            let blackforest = parseInt(document.getElementById("blackforest").value) || 0;
-
-            let total = (rainbow * 300) + (chocolate * 200) + (redvelvet * 250) + (blackforest * 350);
-
-            document.getElementById("bill-box").innerHTML = `Total Price: ₹${total}`;
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
